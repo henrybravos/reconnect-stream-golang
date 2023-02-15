@@ -1,0 +1,14 @@
+syntax = "proto3";
+package stream;
+option go_package = "pb/test";
+
+message HelloRequest {
+  string hello = 1;
+}
+
+message HelloResponse {
+  string say = 1;
+}
+service  HelloService {
+  rpc HelloWord(HelloRequest) returns  (stream HelloResponse) {}
+}
